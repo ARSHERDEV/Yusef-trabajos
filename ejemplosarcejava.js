@@ -12,3 +12,5 @@ console.log(`El costo de envío es: $${costoEnvio}`);
 const productos = ["Laptop", "Mouse"];
 const estadoCarrito = productos.length > 0 ? "Carrito con productos" : "Carrito vacío";
 console.log(estadoCarrito);
+
+x
