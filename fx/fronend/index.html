@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Frutas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="card">
+    <!-- SECCIÓN LOGIN -->
+    <div id="login-section">
+      <h2>Iniciar Sesión</h2>
+      <p class="subtitle">Usuarios: <b>arce/123</b> | maria/abc | juan/456</p>
+
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Ingresar</button>
+      </div>
+
+      <div id="login-feedback"></div>
+    </div>
+
+    <!-- SECCIÓN CRUD CON CARDS FLOTANTES -->
+    <div id="crud-section" class="hidden">
+      <div class="header-bar">
+        <h2 id="user-greeting">Bienvenido</h2>
+        <button class="btn-nav" onclick="cargarYMostrarEjercicios()">📘 Ver 8 Ejercicios </button>
+      </div>
+
+      <div class="panel">
+        <h3>1. Selecciona tu Fruta (Cards Flotantes)</h3>
+        <p class="subtitle">Haz clic en una card para seleccionar la fruta y agregarla a tu lista.</p>
+        
+        <!-- Contenedor para las cards de frutas -->
+        <div id="cards-container" class="cards-grid"></div>
+
+        <div id="status-counter" class="status-box alert">Llevas 0/3 frutas seleccionadas.</div>
+      </div>
+
+      <div class="panel">
+        <h3>2. Tu Lista de Frutas</h3>
+        <ul id="lista-seleccion"></ul>
+      </div>
+    </div>
+
+    <!-- SECCIÓN ENTORNO DE EJERCICIOS -->
+    <div id="ejercicios-section" class="hidden">
+      <div class="header-bar">
+        <h2>Ejercicios </h2>
+        <button class="btn-secondary" onclick="volverAlCrud()">⬅ Volver</button>
+      </div>
+
+      <div class="tabs">
+        <button id="tab-js" class="tab-btn active" onclick="cambiarTab('js')">JavaScript (3)</button>
+        <button id="tab-py" class="tab-btn" onclick="cambiarTab('py')">Python (5)</button>
+      </div>
+
+      <div id="contenido-js" class="tab-content"></div>
+      <div id="contenido-py" class="tab-content hidden"></div>
+    </div>
+  </div>
+
+  <!-- POPUP MODAL (RECOMENDACIÓN NUTRICIONAL) -->
+  <div id="modal-popup" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-icon">🎉</div>
+      <h2>¡Meta de 3 Frutas Cumplida!</h2>
+      <hr>
+      <p id="modal-calorias" class="calorias-total"></p>
+      <div class="recomendacion-box">
+        <h4>💡 Recomendación de consumo:</h4>
+        <p id="modal-recomendacion"></p>
+      </div>
+      <button onclick="cerrarModal()" class="btn-modal">Entendido, ¡gracias!</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
